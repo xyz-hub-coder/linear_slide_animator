@@ -26,12 +26,12 @@ jobs:
 
     # Tells Gradle to build your specific library module
     - name: Build AAR with Gradle
-      run: ./gradlew :linear_slide_animator:assembleRelease
+      run: ./gradlew :animator:assembleRelease
 
     # Uploads the finished AAR so you can download it
     - name: Upload AAR Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: linear_slide_animator-release-aar
+        name: animator-release-aar
         path: '**/build/outputs/aar/*-release.aar'
         
