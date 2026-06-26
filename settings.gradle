@@ -1,2 +1,2 @@
 rootProject.name = "LinearSlideAnimator"
-include ':linear_slide_animator'
+include ':animator'
