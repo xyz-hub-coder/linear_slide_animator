@@ -1,6 +1,18 @@
+language: java
 jdk:
   - openjdk17
+
 before_install:
-  - sdk install java 17.0.0-open
-build:
-  artifact: linearslideanimator/build/outputs/aar/linearslideanimator-release.aar
+  - curl -s "https://get.sdkman.io" | bash
+  - source "$HOME/.sdkman/bin/sdkman-init.sh"
+  - sdk install java 17.0.2-open
+
+script:
+  - ./gradlew assembleRelease
+
+deploy:
+  provider: releases
+  file: linear_slide_animator/build/outputs/aar/linear_slide_animator-release.aar
+  skip_cleanup: true
+  on:
+    tags: true
