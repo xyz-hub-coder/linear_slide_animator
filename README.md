@@ -1,6 +1,6 @@
 # LinearSlideAnimator
 
-A lightweight Android animation library that slides one or more Views in or out of their parent's visible bounds — with stagger, alpha cross-fade, automatic visibility management, and GPU-accelerated rendering built in. No dependencies. Drop in one file, or pull from JitPack.
+A lightweight Android animation library that slides one or more Views in or out of their parent's visible bounds — with stagger, alpha cross-fade, automatic visibility management, and GPU-accelerated rendering built in. No dependencies.
 
 ---
 
@@ -20,11 +20,9 @@ Then add the dependency in your module `build.gradle`:
 
 ```groovy
 dependencies {
-    implementation 'com.github.YOUR_GITHUB_USERNAME:LinearSlideAnimator:1.0.0'
+    implementation 'com.github.xyz-hub-coder:LinearSlideAnimator:1.0.0'
 }
 ```
-
-Replace `YOUR_GITHUB_USERNAME` with the GitHub account this repo is published under.
 
 > **Minimum API:** 21 &nbsp;|&nbsp; **Java source:** 11
 
