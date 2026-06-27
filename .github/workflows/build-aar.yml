@@ -19,14 +19,12 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x ./gradlew
-
-    # Tells Gradle to build your specific library module
-    - name: Build AAR with Gradle
-      run: ./gradlew :animator:assembleRelease
+    # This official action automatically handles caching and sets up Gradle safely
+    - name: Setup and Run Gradle Build
+      uses: gradle/actions/setup-gradle@v3
+      with:
+        arguments: :animator:assembleRelease
 
     # Uploads the finished AAR so you can download it
     - name: Upload AAR Artifact
@@ -34,4 +32,3 @@ jobs:
       with:
         name: animator-release-aar
         path: '**/build/outputs/aar/*-release.aar'
-        
