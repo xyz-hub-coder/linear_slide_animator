@@ -20,15 +20,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    # Hard-locked to your project version
+    # Clean setup forcing Gradle 9.0 without old cache interference
     - name: Setup and Run Gradle Build
       uses: gradle/actions/setup-gradle@v3
       with:
         gradle-version: '9.0.0'
-        arguments: :animator:assembleRelease
-
-    - name: Upload AAR Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: animator-release-aar
-        path: '**/build/outputs/aar/*-release.aar'
+        cache-disabled: true # Forces a clean evaluation phase
+        arguments: :animator:assembleRelease --no-daemon
