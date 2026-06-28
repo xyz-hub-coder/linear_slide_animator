@@ -1,5 +1,4 @@
 plugins {
-    // AGP 9.0.1 matches the Gradle 9.0 toolchain requirements
     id 'com.android.library' version '9.0.1' apply false
 }
 
